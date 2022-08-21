@@ -85,7 +85,7 @@ primary_widgets = [
 
     icon(bg="color3", text=' '),  # Icon: nf-fa-feed
     
-    widget.Net(**base(bg='color3'), interface='enp3s0', format="{down}   {up}"),
+    widget.Net(**base(bg='color3'), interface='enp3s0', format="{down}   {up} "),
 
     powerline('color2', 'color3'),
 
