@@ -75,7 +75,7 @@ primary_widgets = [
         background=colors['color4'],
         colour_have_updates=colors['text'],
         colour_no_updates=colors['text'],
-        no_update_string='0',
+        no_update_string='0 ',
         display_format='{updates} ',
         update_interval=1800,
         custom_command='checkupdates',
@@ -121,7 +121,6 @@ secondary_widgets = [
                     graph_color=colors['color2'],
                     fill_color=colors['color2'],
                     line_width=2,
-                    
                     ),
     
     powerline('color2', 'color3'),
