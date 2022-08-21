@@ -37,6 +37,7 @@ floating_layout = layout.Floating(
         Match(wm_class='maketag'),
         Match(wm_class='ssh-askpass'),
         Match(wm_class='gnome-calculator'),
+        Match(wm_class='gnome-calendar'),
         Match(title='branchdialog'),
         Match(title='pinentry'),
         Match(net_wm_pid=33680),

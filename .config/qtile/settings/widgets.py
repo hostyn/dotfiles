@@ -1,4 +1,5 @@
 from libqtile import widget
+from libqtile.command import lazy
 from .theme import colors
 
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
@@ -75,16 +76,16 @@ primary_widgets = [
         colour_have_updates=colors['text'],
         colour_no_updates=colors['text'],
         no_update_string='0',
-        display_format='{updates}',
+        display_format='{updates} ',
         update_interval=1800,
         custom_command='checkupdates',
     ),
 
     powerline('color3', 'color4'),
 
-    icon(bg="color3", text=' '),  # Icon: nf-fa-feed
+    icon(bg="color3", text=' '),  # Icon: nf-fa-feed
     
-    widget.Net(**base(bg='color3'), interface='enp3s0'),
+    widget.Net(**base(bg='color3'), interface='enp3s0', format="{down}   {up}"),
 
     powerline('color2', 'color3'),
 
@@ -96,7 +97,7 @@ primary_widgets = [
 
     icon(bg="color1", fontsize=17, text=' '), # Icon: nf-mdi-calendar_clock
 
-    widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
+    widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M ', mouse_callbacks={'Button1': lazy.spawn('gnome-calendar')}),
 
     powerline('dark', 'color1'),
 
@@ -108,20 +109,19 @@ secondary_widgets = [
 
     separator(),
 
-    powerline('color3', 'dark'),
+    powerline('color4', 'dark'),
 
-    widget.Pomodoro(**base(bg="color3"), 
-                    color_active="#1e2127", 
-                    color_inactive="#1e2127", 
-                    color_break="#1e2127", 
-                    prefix_break="  ", 
-                    prefix_active="  ",
-                    prefix_long_break="  ",
-                    prefix_inactive=" START ", 
-                    prefix_paused=" PAUSED ",
-                    notification_on=True,
+    widget.Memory(**base(bg='color4'), format='{MemUsed: .0f}{mm}/{MemTotal:.0f}{mm} '),
+
+    powerline('color3', 'color4'),
+
+    widget.CPUGraph(background=colors['color3'], 
+                    border_color=colors['color3'],
+                    type='line',
+                    graph_color=colors['color2'],
+                    line_width=2
                     ),
-
+    
     powerline('color2', 'color3'),
 
     widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
@@ -130,7 +130,8 @@ secondary_widgets = [
 
     powerline('color1', 'color2'),
 
-    widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
+    icon(bg="color1", fontsize=17, text=' '),
+    widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M ', mouse_callbacks={'Button1': lazy.spawn('gnome-calendar')}),
 
     powerline('dark', 'color1'),
 ]

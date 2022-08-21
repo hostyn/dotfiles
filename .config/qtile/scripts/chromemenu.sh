@@ -5,8 +5,9 @@ hostyn96="Hostyn96"
 inothy="Inothy"
 r3="R3"
 ua="UA"
+incognito="Incognito"
 
-options="\x20$hostyn96$icon $inothy$icon $r3$icon $ua$icon"
+options="\x20$hostyn96$icon $inothy$icon $r3$icon $ua$icon $incognito$icon"
 
 chosen=$(echo -en $options | rofi -dmenu -p "" -l 4 -i)
 
@@ -14,6 +15,7 @@ chosen=$(echo -en $options | rofi -dmenu -p "" -l 4 -i)
 [[ "$chosen" =~ "$inothy" ]] && google-chrome-stable --profile-directory="Profile 3" --force-dark-mode && exit 0
 [[ "$chosen" =~ "$r3" ]] && google-chrome-stable --profile-directory="Profile 2" --force-dark-mode && exit 0
 [[ "$chosen" =~ "$ua" ]] && google-chrome-stable --profile-directory="Profile 1" --force-dark-mode && exit 0
+[[ "$chosen" =~ "$incognito" ]] && google-chrome-stable --profile-directory="Default" --force-dark-mode --incognito && exit 0
 
 exit 1
 
