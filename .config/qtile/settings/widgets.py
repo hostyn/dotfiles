@@ -117,9 +117,11 @@ secondary_widgets = [
 
     widget.CPUGraph(background=colors['color3'], 
                     border_color=colors['color3'],
-                    type='line',
+                    type='box',
                     graph_color=colors['color2'],
-                    line_width=2
+                    fill_color=colors['color2'],
+                    line_width=2,
+                    
                     ),
     
     powerline('color2', 'color3'),
