@@ -111,7 +111,7 @@ secondary_widgets = [
 
     powerline('color4', 'dark'),
 
-    widget.Memory(**base(bg='color4'), format='{MemUsed: .0f}{mm}/{MemTotal:.0f}{mm} '),
+    widget.Memory(**base(bg='color4'), format='{MemUsed: .0f}{mm}/{MemTotal:.0f}{mm} ', mouse_callbacks={'Button1': lazy.spawn('alacritty -t "System monitor" -e btop')}),
 
     powerline('color3', 'color4'),
 
@@ -121,6 +121,7 @@ secondary_widgets = [
                     graph_color=colors['color2'],
                     fill_color=colors['color2'],
                     line_width=2,
+                    mouse_callbacks={'Button1': lazy.spawn('alacritty -t "System monitor" -e btop')}
                     ),
     
     powerline('color2', 'color3'),
