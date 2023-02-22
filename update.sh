@@ -17,3 +17,6 @@ cp ~/.config/mimeapps.list .config
 
 # BACKGROUNDS
 cp -r ~/.background .
+
+# SDDM Config
+cp /etc/sddm.conf.d/default.conf sddm.conf
