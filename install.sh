@@ -4,7 +4,7 @@ cd ~
 
 # ==== Installing pacman packages ==== #
 
-sudo pacman -S base-devel sddm qtile neovim alacritty git zsh python3-pip pacman-contrib feh picom --needed --noconfirm
+sudo pacman -S base-devel sddm qtile neovim alacritty git zsh python-pip pacman-contrib feh picom --needed --noconfirm
 
 # ==== Create user directories ==== #
 
