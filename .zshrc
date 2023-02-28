@@ -36,7 +36,7 @@ source /usr/share/nvm/init-nvm.sh
 # ======= Plugins ======= #
 
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $HOME/.zsh/zsh-autosuggestions.zsh
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/.zsh/zsh-sudo.zsh
 
 # ======= Prompt ======= #

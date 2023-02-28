@@ -4,7 +4,7 @@ cd ~
 
 # ==== Installing pacman packages ==== #
 
-sudo pacman -S base-devel sddm qtile neovim alacritty git zsh python-pip pacman-contrib feh picom otf-cascadia-code-nerd ttf-hack-nerd ttf-mononoki-nerd ttf-ubuntu-mono-nerd ttf-ubuntu-nerd udiskie volumeicon --needed --noconfirm
+sudo pacman -S base-devel sddm qtile neovim alacritty git zsh python-pip pacman-contrib feh picom otf-cascadia-code-nerd ttf-hack-nerd ttf-mononoki-nerd ttf-ubuntu-mono-nerd ttf-ubuntu-nerd udiskie volumeicon plasma-workspace --needed --noconfirm
 
 # ==== Create user directories ==== #
 
@@ -50,6 +50,16 @@ cd ~
 # ==== Installing qtile conifg dependencies ==== #
 
 pip install psutil
+
+# ==== Installing zsh dependencies ==== #
+
+mkdir ~/.zsh
+cd ~/.zsh
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+git clone https://github.com/zsh-users/zsh-autosuggestions.git
+wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh -O zsh-sudo.zsh
+
+sudo chsh -s /bin/zsh $USER
 
 # ==== Start SDDM ==== #
 
