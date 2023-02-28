@@ -4,7 +4,7 @@ cd ~
 
 # ==== Installing pacman packages ==== #
 
-sudo pacman -S base-devel sddm qtile neovim alacritty git zsh python-pip pacman-contrib feh picom otf-cascadia-code-nerd ttf-hack-nerd ttf-mononoki-nerd ttf-ubuntu-mono-nerd ttf-ubuntu-nerd udiskie volumeicon plasma-workspace --needed --noconfirm
+sudo pacman -S base-devel sddm qtile neovim alacritty git zsh python-pip pacman-contrib feh picom otf-cascadia-code-nerd ttf-hack-nerd ttf-mononoki-nerd ttf-ubuntu-mono-nerd ttf-ubuntu-nerd udiskie volumeicon plasma-workspace lsd bat --needed --noconfirm
 
 # ==== Create user directories ==== #
 
@@ -20,6 +20,7 @@ mv ~/Git/dotfiles/.config ~
 sudo mkdir /etc/sddm.conf.d/
 sudo cp -f ~/Git/dotfiles/sddm.conf /etc/sddm.conf.d/default.conf
 sudo cp ~/Git/dotfiles/monitors.sh /etc/sddm.conf.d/monitors.sh
+cp ~/Git/dotfiles/.zshrc ~/.zshrc
 
 # ==== Installing paru ==== #
 
