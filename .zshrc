@@ -41,11 +41,7 @@ source $HOME/.zsh/zsh-sudo.zsh
 
 # ======= Prompt ======= #
 
-reset-cursor() {
-  printf '\033]50;CursorShape=1\x7'
-}
-
-PROMPT="$(reset-cursor)%B%F{200}%n%f %F{7}on%f %F{39}%~%f%b %(?..%B%F{red}%? %f%b) "
+PROMPT="%B%F{200}%n%f %F{7}on%f %F{39}%~%f%b %(?..%B%F{red}%? %f%b) "
 
 # ======= Aliases ======= #
 
