@@ -4,7 +4,7 @@ cd ~
 
 # ==== Installing pacman packages ==== #
 
-sudo pacman -S base-devel sddm qtile neovim alacritty git zsh python-pip pacman-contrib feh picom --needed --noconfirm
+sudo pacman -S base-devel sddm qtile neovim alacritty git zsh python-pip pacman-contrib feh picom otf-cascadia-code-nerd ttf-hack-nerd ttf-mononoki-nerd ttf-ubuntu-mono-nerd ttf-ubuntu-nerd udiskie volumeicon --needed --noconfirm
 
 # ==== Create user directories ==== #
 
@@ -16,7 +16,10 @@ git clone https://github.com/hostyn/dotfiles.git ~/Git/dotfiles
 
 mv ~/Git/dotfiles/.background ~
 mv ~/Git/dotfiles/.config ~
+
+sudo mkdir /etc/sddm.conf.d/
 sudo cp -f ~/Git/dotfiles/sddm.conf /etc/sddm.conf.d/default.conf
+sudo cp ~/Git/dotfiles/monitors.sh /etc/sddm.conf.d/monitors.sh
 
 # ==== Installing paru ==== #
 
@@ -28,7 +31,7 @@ cd ~
 
 # ==== Installing AUR packages ==== #
 
-paru -S otf-cascadia-code-nerd ttf-hack-nerd ttf-mononoki-nerd ttf-ubuntu-mono-nerd ttf-ubuntu-nerd bibata-cursor-theme --noconfirm
+paru -S bibata-cursor-theme nm-applet --noconfirm
 
 # ==== SDDM Config ==== #
 
@@ -41,9 +44,13 @@ sudo rm /usr/share/wayland-sessions/qtile-wayland.desktop
 git clone https://github.com/yeyushengfan258/McSur-kde.git ~/Git/McSur
 cd ~/Git/McSur/sddm-dark
 chmod +x install.sh
-./install.sh
+sudo ./install.sh
 cd ~
 
 # ==== Installing qtile conifg dependencies ==== #
 
 pip install psutil
+
+# ==== Start SDDM ==== #
+
+sudo systemctl start sddm
