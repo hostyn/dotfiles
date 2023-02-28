@@ -4,7 +4,7 @@ cd ~
 
 # ==== Installing pacman packages ==== #
 
-sudo pacman -Syyu
+sudo pacman -Syyu --noconfirm
 sudo pacman -S base-devel sddm qtile neovim alacritty git zsh python-pip pacman-contrib feh picom otf-cascadia-code-nerd ttf-hack-nerd ttf-mononoki-nerd ttf-ubuntu-mono-nerd ttf-ubuntu-nerd udiskie volumeicon plasma-workspace lsd bat --needed --noconfirm
 
 # ==== Create user directories ==== #
